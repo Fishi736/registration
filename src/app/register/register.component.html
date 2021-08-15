@@ -1,48 +1,51 @@
-<div class="container p-5 bg-dark bg-gradient">
-    <div class=" col-md-6 col-lg-6 offset-3">
-        <div class="card shadow">
-            <form #cc="ngForm" class="text-center p-4">
-                <h3 class=" mb-5">Sign up</h3>
-                <div class="d-flex justify-content-between mb-4">
-                    <div class="col-lg-6">
-                        <input type="text" class="form-control" placeholder="First name" name="Firstname" ngModel
-                            required="">
+<section class="bg-dark bg-gradient">
+    <div class="container p-5 ">
+        <div class=" col-md-6 col-lg-6 offset-3">
+            <div class="card shadow">
+                <form #cc="ngForm" class="text-center p-4">
+                    <h3 class=" mb-5">Sign up</h3>
+                    <div class="d-flex justify-content-between mb-4">
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" placeholder="First name" name="Firstname" ngModel
+                                required="">
+                        </div>
+                        <div class="col-lg-5 ">
+                            <input type="text" class="form-control" placeholder="Last name" name="Lastname" ngModel
+                                required="">
+                        </div>
                     </div>
-                    <div class="col-lg-5 ">
-                        <input type="text" class="form-control" placeholder="Last name" name="Lastname" ngModel
-                            required="">
+                    <input type="email" class="form-control mb-4" placeholder="E-mail" name="Email"
+                        [ngClass]="{'is-invalid':!Email?.valid && Email?.touched,'is-valid':Email?.valid && Email?.touched}"
+                        ngModel #Email="ngModel" required pattern="(\w+?@\w+?\x2E.+)">
+                    <small *ngIf="Email?.errors?.required && Email?.touched" class="text-danger">Email is
+                        required</small>
+                    <small *ngIf="Email?.errors?.pattern && Email?.touched" class="text-danger">Email is invalid</small>
+
+                    <input type="password" class="form-control mb-4" placeholder="Password" aria-describedby="default"
+                        name="Password"
+                        [ngClass]="{'is-invalid':!Password?.valid && Password?.touched,'is-valid':Password?.valid && Password?.touched}"
+                        ngModel #Password="ngModel" required
+                        pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$">
+                    <small *ngIf="Password?.errors?.pattern && Password?.touched" class="text-danger">Minimum eight
+                        characters, at least one letter, one number and one special character</small>
+                    <small *ngIf="Password?.errors?.required && Password?.touched" class="text-danger">Password is
+                        required.</small>
+
+                    <div class="form-row mb-4">
+                        <div class="col">
+                            <input type="text" inputmode="tel" class="form-control" placeholder="Phonenumber"
+                                name="Phonenumber" ngModel required="true">
+                        </div>
+
                     </div>
-                </div>
-                <input type="email" class="form-control mb-4" placeholder="E-mail" name="Email"
-                    [ngClass]="{'is-invalid':!Email?.valid && Email?.touched,'is-valid':Email?.valid && Email?.touched}"
-                    ngModel #Email="ngModel" required pattern="(\w+?@\w+?\x2E.+)">
-                <small *ngIf="Email?.errors?.required && Email?.touched" class="text-danger">Email is required</small>
-                <small *ngIf="Email?.errors?.pattern && Email?.touched" class="text-danger">Email is invalid</small>
-
-                <input type="password" class="form-control mb-4" placeholder="Password" aria-describedby="default"
-                    name="Password"
-                    [ngClass]="{'is-invalid':!Password?.valid && Password?.touched,'is-valid':Password?.valid && Password?.touched}"
-                    ngModel #Password="ngModel" required
-                    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$">
-                <small *ngIf="Password?.errors?.pattern && Password?.touched" class="text-danger">Minimum eight
-                    characters, at least one letter, one number and one special character</small>
-                <small *ngIf="Password?.errors?.required && Password?.touched" class="text-danger">Password is
-                    required.</small>
-
-                <div class="form-row mb-4">
-                    <div class="col">
-                        <input type="text" inputmode="tel" class="form-control" placeholder="Phonenumber"
-                            name="Phonenumber" ngModel required="true">
-                    </div>
-
-                </div>
-                <button class="btn btn-primary my-4 btn-block " [disabled]="!cc.valid" type="reset"
-                    (click)="send(cc)">Sign
-                    in</button>
-                <p>Already a user?
-                    <a class="text-info" routerLink="/login" >Login here</a>
-                </p>
-            </form>
+                    <button class="btn btn-primary my-4 btn-block " [disabled]="!cc.valid" type="reset"
+                        (click)="send(cc)">Sign
+                        in</button>
+                    <p>Already a user?
+                        <a class="text-info" routerLink="/login">Login here</a>
+                    </p>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+</section>
