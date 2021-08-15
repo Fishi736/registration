@@ -1,0 +1,31 @@
+<div class="row row-bg pt-5 justify-content-center">
+
+    
+    <div class="col-lg-4 ">
+        <div class="card shadow">
+            <div class="card-header text-center mb-4">
+                <h3 >Sign In</h3>
+            </div>
+                <p class="text-center text-muted">Swing your mail! Once you have it you love it.</p>
+
+            <form #ld="ngForm" class="p-4">
+                <input type="email" id="defaultLogdangerrmEmail" class="form-control mb-5" placeholder="E-mail"
+                    name="Email" ngModel>
+
+                <!-- Password -->
+                <input type="password" id="defaultLogdangerrmPassword" class="form-control mb-5" placeholder="Password"
+                    name="Password" ngModel>
+
+
+                <!-- Sign in button -->
+                <button (click)="login(ld)" class="btnn  btn-block badge-pill my-5" type="submit">Sign
+                    In</button>
+
+                <!-- Register -->
+                <p>Not a member?
+                    <a class="my-5 text-info" routerLink="/Register" routerLinkActive="active">Register</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>

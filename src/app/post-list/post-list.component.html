@@ -1,0 +1,26 @@
+<div class="container p-5">
+
+    <div class="form-group m-5">
+        <label for="search-text">Search Text</label>
+        <input type="email" class="form-control" id="search-text" aria-describedby="search-text"
+            [(ngModel)]="searchText" placeholder="Enter text to search" autofocus>
+    </div>
+
+
+
+    <div class="row">
+
+        <div class="card w-25 m-3" *ngFor="let data of Data | search: searchText">
+            <img src="{{data.url}}" class="mx-auto d-block  mb-3" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{data.title}}</h5>
+                <p class="card-text text-center fst-italic">Some quick example text to build on the card title and make
+                    up the bulk of
+                    the card's content.</p>
+                <a href="{{data.url}}" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
