@@ -20,8 +20,11 @@ export class AppService {
   signup(cc) {
     return this.http.post(this.baseurl + "/registerUser", cc);
   }
+
+
   signin(ld) {
-    return this.http.post(this.baseurl + "/login", ld).pipe(map((response: Response) => {
+    return this.http.post(this.baseurl + "/login", ld)
+    .pipe(map((response: Response) => {
       console.log(response)
       if (response == null) {
         this.IsUserLoggedIn = false;
@@ -29,6 +32,7 @@ export class AppService {
 
       } else {
         this.IsUserLoggedIn = true;
+        return response;
         console.log(this.IsUserLoggedIn)
 
 

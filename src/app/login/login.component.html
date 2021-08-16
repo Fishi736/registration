@@ -1,28 +1,20 @@
-<section class="bg-success">
+<section class="bg">
     <div class="row text-center p-5 justify-content-center">
-    
-        
-        <div class="col-lg-4 ">
-            <div class="card shadow">
-                <div class="card-header text-center mb-4">
-                    <h3 >Sign In</h3>
+
+
+        <div class="col-lg-6 ">
+            <div class="card shadow p-3">
+                <div class=" text-center my-4">
+                    <h3>Login Here</h3>
                 </div>
-                
-    
                 <form #ld="ngForm" class="p-4">
-                    <input type="email" id="defaultLogdangerrmEmail" class="form-control mb-5" placeholder="E-mail"
+                    <input type="email" id="defaultLogdangerrmEmail" class="form-control mb-3" placeholder="E-mail"
                         name="Email" ngModel>
-    
-                    <!-- Password -->
-                    <input type="password" id="defaultLogdangerrmPassword" class="form-control mb-5" placeholder="Password"
-                        name="Password" ngModel>
-    
-    
-                    <!-- Sign in button -->
-                    <button (click)="login(ld)" class="btn btn-block btn-primary mb-5" type="submit">Sign
-                        In</button>
-    
-                    <!-- Register -->
+                    <input type="password" id="defaultLogdangerrmPassword" class="form-control mb-5"
+                        placeholder="Password" name="Password" ngModel>
+                    <div class="d-grid gap-2 col-6 mx-auto mb-3">
+                        <button (click)="login(ld)" class="btn " type="submit">Login</button>
+                    </div>
                     <p>Not a member?
                         <a class="my-5 text-info" routerLink="/Register" routerLinkActive="active">Register</a>
                     </p>
@@ -31,4 +23,4 @@
         </div>
     </div>
 
-</section>   
+</section>

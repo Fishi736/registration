@@ -1,9 +1,9 @@
-<section class="bg-dark bg-gradient">
+<section class="bg">
     <div class="container p-5 ">
         <div class=" col-md-6 col-lg-6 offset-3">
             <div class="card shadow">
                 <form #cc="ngForm" class="text-center p-4">
-                    <h3 class=" mb-5">Sign up</h3>
+                    <h3 class=" mb-5">Get Yourself Registered</h3>
                     <div class="d-flex justify-content-between mb-4">
                         <div class="col-lg-6">
                             <input type="text" class="form-control" placeholder="First name" name="Firstname" ngModel
@@ -38,9 +38,11 @@
                         </div>
 
                     </div>
-                    <button class="btn btn-primary my-4 btn-block " [disabled]="!cc.valid" type="reset"
-                        (click)="send(cc)">Sign
-                        in</button>
+
+                    <div class="d-grid gap-2 col-6 mx-auto mb-3">
+                        <button (click)="send(cc)" class="btn " [disabled]="!cc.valid"
+                            type="submit">Register</button>
+                    </div>
                     <p>Already a user?
                         <a class="text-info" routerLink="/login">Login here</a>
                     </p>

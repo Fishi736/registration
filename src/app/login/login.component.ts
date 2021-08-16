@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  msg: string;
+  msg: any;
   constructor(private q: AppService, private route: Router) { }
 
   ngOnInit(): void {
@@ -18,9 +18,12 @@ export class LoginComponent implements OnInit {
 
 
   login(ld) {
-    this.q.signin(ld.value).subscribe(k => {
+    this.q.signin(ld.value).subscribe(response => {
+      this.msg = response;
+      sessionStorage.setItem("userData", JSON.stringify(this.msg.token));
       this.route.navigate(['/post-list']);
 
     })
   }
+
 }

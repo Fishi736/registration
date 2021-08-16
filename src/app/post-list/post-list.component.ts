@@ -9,7 +9,7 @@ import { AppService } from '../app.service';
 })
 export class PostListComponent implements OnInit {
   Data: any = [];
-  public  searchText = '';
+  public searchText = '';
 
   constructor(private q: AppService, private route: Router) { }
 
@@ -20,4 +20,8 @@ export class PostListComponent implements OnInit {
     })
   }
 
+
+  LogOut(): void {
+    window.sessionStorage.clear();
+  }
 }
